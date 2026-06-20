@@ -7,7 +7,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 
-const SCRIPT_URL = "https://docs.google.com/spreadsheets/d/1fw8JQiuF_4xwJQRzMbJiAwQ1TayhV7PEi6FlEUk2RiA/edit?usp=sharing";
+// ✅ Set NEXT_PUBLIC_GOOGLE_SHEET_URL in your .env.local file to your Google Apps Script /exec URL.
+// See the setup guide in the project root or ask your developer.
+const SCRIPT_URL = process.env.NEXT_PUBLIC_GOOGLE_SHEET_URL || "";
 
 const emptyForm = {
   fullName: "",
@@ -33,6 +35,10 @@ export function Registration() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!SCRIPT_URL) {
+      setError("Registration is not configured yet. Please contact us via WhatsApp.");
+      return;
+    }
     setIsSubmitting(true);
     setError("");
 
