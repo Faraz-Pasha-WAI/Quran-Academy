@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 function SocialIcon({ children, href }: { children: React.ReactNode; href: string }) {
@@ -38,7 +39,7 @@ export function Footer() {
           {/* Column 1: Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="mb-4 block">
-              <img src="/images/blessing-quran-logo.jpeg" alt="Blessing Quran Logo" className="h-16 w-auto" />
+              <Image src="/images/blessing-quran-logo.jpeg" alt="Blessing Quran Logo" width={160} height={64} className="h-16 w-auto object-contain" />
             </Link>
             <p className="text-sm text-white/80 mb-6">
               Empowering students worldwide with authentic and personalized online Quran education.

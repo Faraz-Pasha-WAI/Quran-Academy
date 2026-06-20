@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -44,7 +45,7 @@ export function Navbar() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2">
-              <img src="/images/blessing-quran-logo.jpeg" alt="Blessing Quran Logo" className="h-12 w-auto" />
+              <Image src="/images/blessing-quran-logo.jpeg" alt="Blessing Quran Logo" width={120} height={48} className="h-12 w-auto object-contain" />
             </Link>
 
             {/* Desktop Navigation */}
